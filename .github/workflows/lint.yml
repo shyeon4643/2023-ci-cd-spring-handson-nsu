@@ -1,0 +1,16 @@
+name: Lint
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  lint:
+    name : Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: nikitasavinov/checkstyle-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
